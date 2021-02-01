@@ -3,6 +3,7 @@ import React from "react";
 // const Dashboard = React.lazy(() => import('../src/views/Dashboard'));
 const RatioInput = React.lazy(() => import('../src/views/Input/Ratio'));
 const PromotionInput = React.lazy(() => import('../src/views/Input/Promotion'));
+const StatisticPromotionInput = React.lazy(() => import('../src/views/Input/Promotion/statisticPromotion'));
 const StandardClassInput = React.lazy(() => import('../src/views/Input/StandardClass'));
 const AccountMajor = React.lazy(() => import('../src/views/Major/Account'));
 const QuestionMajor = React.lazy(() => import('../src/views/Major/Question'));
@@ -20,6 +21,7 @@ let routes = [
   // { path: "/", exact: true, name: "Trang chủ", component: Dashboard },
   { path: "/ti-le", exact: true, name: "Tỉ lệ chia thưởng", component: RatioInput },
   { path: "/khuyen-mai", exact: true, name: "Danh sách khuyến mãi", component: PromotionInput },
+  { path: "/khuyen-mai/danh-sach-cau-hoi", exact: true, name: "Thống kê mã Khuyến mãi", component: StatisticPromotionInput },
   { path: "/tieu-chuan-hang", exact: true, name: "Tiêu chuẩn hạng", component: StandardClassInput },
   { path: "/cau-hoi", exact: true, name: "Câu hỏi", component: QuestionMajor },
   { path: "/bao-cao", exact: true, name: "Báo cáo", component: ReportMajor },

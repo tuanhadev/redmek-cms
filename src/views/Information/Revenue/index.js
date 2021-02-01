@@ -5,7 +5,7 @@ import config from "../../../config";
 const columns = [
   {
     title: "STT",
-    dataIndex: "stt1"
+    dataIndex: "stt"
   },
   {
     title: "Số CH hoàn",
@@ -60,7 +60,7 @@ const columns = [
 const data = [
   {
     key: 1,
-    stt1: 1
+    stt: 1
   }
 ];
 

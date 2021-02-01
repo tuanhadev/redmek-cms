@@ -5,23 +5,23 @@ import config from "../../../config";
 const columns = [
   {
     title: "STT",
-    dataIndex: "stt1"
+    dataIndex: "stt"
   },
   {
     title: 'ID báo cáo',
-    dataIndex: 'name',
+    dataIndex: 'stt',
   },
   {
     title: 'Tên câu hỏi',
-    dataIndex: 'email',
+    dataIndex: 'stt',
   },
   {
     title: 'Lớp',
-    dataIndex: 'phone',
+    dataIndex: 'stt',
   },
   {
     title: 'Môn',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   },
   {
     title: "Giá chốt",
@@ -29,19 +29,19 @@ const columns = [
   },
   {
     title: 'Thời gian đăng',
-    dataIndex: 'name',
+    dataIndex: 'stt',
   },
   {
     title: 'Thời hạn',
-    dataIndex: 'email',
+    dataIndex: 'stt',
   },
   {
     title: 'Người hỏi',
-    dataIndex: 'phone',
+    dataIndex: 'stt',
   },
   {
     title: 'Số tiền đã nạp',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   },
   {
     title: "Số câu hỏi",
@@ -49,19 +49,19 @@ const columns = [
   },
   {
     title: 'Số ngày đăng kí',
-    dataIndex: 'name',
+    dataIndex: 'stt',
   },
   {
     title: 'Người trả lời',
-    dataIndex: 'email',
+    dataIndex: 'stt',
   },
   {
     title: 'Số tiền đã rút',
-    dataIndex: 'phone',
+    dataIndex: 'stt',
   },
   {
     title: 'Số câu hỏi nhận',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   },
   {
     title: "Số ngày đăng kí",
@@ -69,34 +69,34 @@ const columns = [
   },
   {
     title: 'Người báo cáo',
-    dataIndex: 'name',
+    dataIndex: 'stt',
   },
   {
     title: 'Thời gian',
-    dataIndex: 'email',
+    dataIndex: 'stt',
   },
   {
     title: 'Nội dung',
-    dataIndex: 'phone',
+    dataIndex: 'stt',
   },
   {
     title: 'Trạng thái',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   },
   {
     title: 'Người xử lý',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   },
   {
     title: 'Xem chi tiết',
-    dataIndex: 'address',
+    dataIndex: 'stt',
   }
 ];
 
 const data = [
   {
     key: 1,
-    stt1: 1
+    stt: 1
   }
 ];
 

@@ -10,79 +10,79 @@ const columns = [
   },
   {
     title: 'Tên mã',
-    dataIndex: 'name',
+    dataIndex: 'stt',
   },
   {
     title: 'Loại',
-    dataIndex: 'type',
+    dataIndex: 'stt',
   },
   {
     title: 'Tác dụng',
-    dataIndex: 'action',
+    dataIndex: 'stt',
   },
   {
     title: 'Giá trị',
-    dataIndex: 'value',
+    dataIndex: 'stt',
   },
   {
     title: 'Bắt đầu',
-    dataIndex: 'start_at',
+    dataIndex: 'stt',
   },
   {
     title: 'Kết thúc',
-    dataIndex: 'end_at',
+    dataIndex: 'stt',
   },
   {
     title: 'Số lần cho mỗi người',
-    dataIndex: 'numberOfTimes',
+    dataIndex: 'stt',
   },
   {
     title: 'Ảnh',
-    dataIndex: 'image',
+    dataIndex: 'stt',
   },
   {
     title: 'Dịch vụ',
-    dataIndex: 'service',
+    dataIndex: 'stt',
   },
   {
     title: 'Lớp',
-    dataIndex: 'class',
+    dataIndex: 'stt',
   },
   {
     title: 'Môn',
-    dataIndex: 'subject',
+    dataIndex: 'stt',
   },
   {
     title: 'Đối tượng(Số tiền A đã nạp)',
-    dataIndex: 'amountADeposited',
+    dataIndex: 'stt',
   },
   {
     title: 'Số câu hỏi đã hoàn thành',
-    dataIndex: 'numberQuestionComplete',
+    dataIndex: 'stt',
   },
   {
     title: 'Tạo mới',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Tình trạng',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Số A đủ DK dùng',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Số lượng mà các A có thể dùng',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Số lượt đã dùng',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Tổng ưu đãi đã dùng',
-    dataIndex: 'createNew',
+    dataIndex: 'stt',
   },
   {
     title: 'Danh sách câu hỏi',

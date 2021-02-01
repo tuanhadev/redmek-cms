@@ -5,7 +5,7 @@ import config from "../../../config";
 const columns = [
   {
     title: "",
-    dataIndex: "stt1"
+    dataIndex: "stt"
   },
   {
     title: "Đăng ký",
@@ -52,7 +52,7 @@ const columns = [
 const data = [
   {
     key: 1,
-    stt1: 1
+    stt: 1
   }
 ];
 

@@ -8,6 +8,10 @@ const columns = [
     dataIndex: "stt"
   },
   {
+    title: 'Tên câu hỏi',
+    dataIndex: 'stt',
+  },
+  {
     title: 'Lớp',
     dataIndex: 'stt',
   },
@@ -24,12 +28,12 @@ const columns = [
     dataIndex: 'stt',
   },
   {
-    title: 'Mã khuyến mãi',
+    title: 'Mã KM',
     dataIndex: 'stt',
   },
   {
-    title: "Ảnh",
-    dataIndex: "stt"
+    title: 'Ảnh',
+    dataIndex: 'stt',
   },
   {
     title: 'Mô tả',
@@ -48,15 +52,15 @@ const columns = [
     dataIndex: 'stt',
   },
   {
-    title: "Người hỏi",
-    dataIndex: "stt"
+    title: 'Người hỏi',
+    dataIndex: 'stt',
   },
   {
     title: 'Số tiền đã nạp',
     dataIndex: 'stt',
   },
   {
-    title: 'Số câu hỏi hoàn thành',
+    title: 'Số câu hỏi hoàn thành/Đăng',
     dataIndex: 'stt',
   },
   {
@@ -68,11 +72,11 @@ const columns = [
     dataIndex: 'stt',
   },
   {
-    title: "Số tiền đã rút",
-    dataIndex: "stt"
+    title: 'Số tiền đã rút',
+    dataIndex: 'stt',
   },
   {
-    title: 'Số câu hỏi nhận',
+    title: 'Số câu hỏi nhận/hoàn thành',
     dataIndex: 'stt',
   },
   {
@@ -84,7 +88,11 @@ const columns = [
     dataIndex: 'stt',
   },
   {
-    title: 'Mô tả',
+    title: 'Ảnh LG',
+    dataIndex: 'stt',
+  },
+  {
+    title: 'Mô tả LG',
     dataIndex: 'stt',
   },
   {
@@ -92,29 +100,9 @@ const columns = [
     dataIndex: 'stt',
   },
   {
-    title: "Duyệt",
-    dataIndex: "stt"
-  },
-  {
-    title: 'Nhắc nhở A',
+    title: 'Mức ưu đãi',
     dataIndex: 'stt',
   },
-  {
-    title: 'Nhắc nhở B',
-    dataIndex: 'stt',
-  },
-  {
-    title: 'Xoá câu hỏi',
-    dataIndex: 'stt',
-  },
-  {
-    title: 'A/B gian lận',
-    dataIndex: 'stt',
-  },
-  {
-    title: 'Ẩn/hiện',
-    dataIndex: 'stt',
-  }
 ];
 
 const data = [
@@ -124,7 +112,7 @@ const data = [
   }
 ];
 
-class QuestionMajor extends React.Component {
+class StatisticPromotionInput extends React.Component {
 
   constructor(props) {
     super(props);
@@ -144,12 +132,12 @@ class QuestionMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Câu hỏi">
-          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} dataSource={data} columns={columns} scroll={{ x: 900 }} loading={loading} />
+        <Card type="inner" title="Thống kê mã Khuyến mãi">
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
     );
   }
 }
 
-export default QuestionMajor;
+export default StatisticPromotionInput;

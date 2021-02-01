@@ -10,7 +10,7 @@ const columnsRechargeAndWithdraw = [
     children: [
       {
         title: '',
-        dataIndex: 'stt1',
+        dataIndex: 'stt',
       },
       {
         title: 'Đăng ký',
@@ -269,7 +269,7 @@ const columnsFinance = [
 const data = [
   {
     key: 1,
-    stt1: 1
+    stt: 1
   }
 ];
 

@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 const columnsSubject = [
   {
     title: "",
-    dataIndex: "stt1"
+    dataIndex: "stt"
   },
   {
     title: "Toán",
@@ -66,7 +66,7 @@ const columnsSubject = [
 const columnsTime = [
   {
     title: "Thời gian đăng",
-    dataIndex: "stt1"
+    dataIndex: "stt"
   },
   {
     title: "0:00 – 1:00",
@@ -125,7 +125,7 @@ const columnsTime = [
 const data = [
   {
     key: 1,
-    stt1: 1
+    stt: 1
   }
 ];
 

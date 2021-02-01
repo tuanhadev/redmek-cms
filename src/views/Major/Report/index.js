@@ -5,7 +5,7 @@ import config from "../../../config";
 const columns = [
   {
     title: "STT",
-    dataIndex: "stt"
+    dataIndex: "stt1"
   },
   {
     title: 'ID báo cáo',
@@ -93,6 +93,13 @@ const columns = [
   }
 ];
 
+const data = [
+  {
+    key: 1,
+    stt1: 1
+  }
+];
+
 class ReportMajor extends React.Component {
 
   constructor(props) {
@@ -114,7 +121,7 @@ class ReportMajor extends React.Component {
     return (
       <div>
         <Card type="inner" title="Báo cáo">
-          <Table pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} scroll={{ x: 900 }} loading={loading} />
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
     );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Card } from 'antd';
+import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -13,56 +14,88 @@ const columns = [
   },
   {
     title: 'Loại',
-    dataIndex: 'email',
+    dataIndex: 'type',
   },
   {
     title: 'Tác dụng',
-    dataIndex: 'phone',
+    dataIndex: 'action',
   },
   {
     title: 'Giá trị',
-    dataIndex: 'address',
+    dataIndex: 'value',
   },
   {
     title: 'Bắt đầu',
-    dataIndex: 'city',
+    dataIndex: 'start_at',
   },
   {
     title: 'Kết thúc',
-    dataIndex: 'created_at',
+    dataIndex: 'end_at',
   },
   {
     title: 'Số lần cho mỗi người',
-    dataIndex: 'created_at',
+    dataIndex: 'numberOfTimes',
   },
   {
     title: 'Ảnh',
-    dataIndex: 'created_at',
+    dataIndex: 'image',
   },
   {
     title: 'Dịch vụ',
-    dataIndex: 'created_at',
+    dataIndex: 'service',
   },
   {
     title: 'Lớp',
-    dataIndex: 'created_at',
+    dataIndex: 'class',
   },
   {
     title: 'Môn',
-    dataIndex: 'created_at',
+    dataIndex: 'subject',
   },
   {
     title: 'Đối tượng(Số tiền A đã nạp)',
-    dataIndex: 'created_at',
+    dataIndex: 'amountADeposited',
   },
   {
     title: 'Số câu hỏi đã hoàn thành',
-    dataIndex: 'created_at',
+    dataIndex: 'numberQuestionComplete',
   },
   {
     title: 'Tạo mới',
-    dataIndex: 'created_at',
+    dataIndex: 'createNew',
   },
+  {
+    title: 'Tình trạng',
+    dataIndex: 'createNew',
+  },
+  {
+    title: 'Số A đủ DK dùng',
+    dataIndex: 'createNew',
+  },
+  {
+    title: 'Số lượng mà các A có thể dùng',
+    dataIndex: 'createNew',
+  },
+  {
+    title: 'Số lượt đã dùng',
+    dataIndex: 'createNew',
+  },
+  {
+    title: 'Tổng ưu đãi đã dùng',
+    dataIndex: 'createNew',
+  },
+  {
+    title: 'Danh sách câu hỏi',
+    dataIndex: 'listQuestion',
+  },
+];
+
+const data = [
+  {
+    key: 1,
+    stt: 1,
+    listQuestion: <Link to={`/khuyen-mai/danh-sach-cau-hoi`}>Xem danh sách</Link>,
+  }
 ];
 
 class PromotionInput extends React.Component {
@@ -86,7 +119,7 @@ class PromotionInput extends React.Component {
     return (
       <div>
         <Card type="inner" title="Danh sách khuyến mãi">
-          <Table pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} scroll={{ x: 900 }} loading={loading} />
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
     );

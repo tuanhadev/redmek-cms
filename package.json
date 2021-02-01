@@ -2,7 +2,7 @@
   "name": "react-mobx-realworld-example-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://react-mobx.realworld.io",
+  "homepage": "http://tuanhadev.github.io/redmek-cms",
   "license": "MIT",
   "babel": {
     "plugins": [
@@ -16,7 +16,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "custom-react-scripts": "0.2.0",
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^1.2.0"
   },
   "dependencies": {
     "antd": "^4.6.6",

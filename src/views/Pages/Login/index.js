@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { UserOutlined, KeyOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 //toast
-import managerService from "../../../services/managerService";
+// import managerService from "../../../services/managerService";
 import config from "../../../config";
 class Login extends React.Component {
   constructor(props) {
@@ -19,7 +19,8 @@ class Login extends React.Component {
       this.setState({
         loading: true
       })
-      const response = await managerService.login(values);
+      // const response = await managerService.login(values);
+      const response = { token: "token", admin: { name: "Admin" } }
       localStorage.setItem("access_token", response.token);
       localStorage.setItem("name", response.admin.name);
       window.location.reload();

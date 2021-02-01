@@ -1,0 +1,67 @@
+image: alpine
+
+stages:
+  - build
+  - docker-build
+  - deploy
+
+services:
+  - name: docker:dind
+    entrypoint: ["env", "-u", "DOCKER_HOST"]
+    command: ["dockerd-entrypoint.sh"]
+variables:
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  # See https://github.com/docker-library/docker/pull/166
+  DOCKER_TLS_CERTDIR: ""
+
+build-master:
+  image: node:12.16.2
+  stage: build
+  only:
+    - master
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - build
+    expire_in: 1 hours
+
+docker-build-master:
+  image: docker:stable
+  stage: docker-build
+  only:
+    - master
+  before_script:
+    - apk add --update curl && rm -rf /var/cache/apk/*
+    - docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD} ${REGISTRY}
+  script:
+    # Build docker image
+    - docker build -t ${CI_IMAGE} .
+    - docker push ${CI_IMAGE}
+  #  after_script:
+  #    - curl -X GET "https://api.telegram.org/bot1286352688:AAE2vBPt-VSIgRUahKDgPp3PwUwb6diyvtE/sendMessage?chat_id=-280262222&text=CMS%20%28Stagging%29%3A%20Build%20success"
+  artifacts:
+    paths:
+      - build
+    expire_in: 1 hours
+
+deploy-master:
+  image: alpine:3.12.0
+  stage: deploy
+  before_script:
+    - apk update
+    - apk add openssh curl
+    - eval $(ssh-agent -s)
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 700 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh -t ${USER}@${HOST} "cd ~/huper-optik/huper-optik-master && docker-compose pull && docker-compose up -d --force-recreate cms"
+  only:
+    refs:
+      - master

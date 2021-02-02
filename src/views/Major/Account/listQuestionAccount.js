@@ -1,6 +1,5 @@
 import React from "react";
 import { Table, Card } from 'antd';
-import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -9,31 +8,43 @@ const columns = [
     dataIndex: "stt"
   },
   {
-    title: "ID Yêu cầu rút",
+    title: "ID",
     dataIndex: "stt"
   },
   {
-    title: "Tên tài khoản",
+    title: "Tên",
     dataIndex: "stt"
   },
   {
-    title: "Địa chỉ định danh",
+    title: "A/B",
     dataIndex: "stt"
   },
   {
-    title: "ID tài khoản B",
+    title: "Định danh",
     dataIndex: "stt"
   },
   {
-    title: "Số dư tài khoản",
+    title: "Email",
     dataIndex: "stt"
   },
   {
-    title: "Tạm giữ",
+    title: "Điện thoại",
     dataIndex: "stt"
   },
   {
-    title: "Thời gian",
+    title: "Facebook",
+    dataIndex: "stt"
+  },
+  {
+    title: "TK Google",
+    dataIndex: "stt"
+  },
+  {
+    title: "Tỉnh",
+    dataIndex: "stt"
+  },
+  {
+    title: "Ngày đăng ký",
     dataIndex: "stt"
   },
   {
@@ -41,11 +52,39 @@ const columns = [
     dataIndex: "stt"
   },
   {
+    title: "Kích hoạt",
+    dataIndex: "stt"
+  },
+  {
+    title: "Hạng",
+    dataIndex: "stt"
+  },
+  {
+    title: "Số CH đăng / nhận",
+    dataIndex: "stt"
+  },
+  {
+    title: "Số Câu hỏi Hoàn thành",
+    dataIndex: "stt"
+  },
+  {
+    title: "Số lần bị nhắc nhở",
+    dataIndex: "stt"
+  },
+  {
     title: "Danh sách câu hỏi",
     dataIndex: "stt"
   },
   {
-    title: "Số Câu hỏi Nhận/Hoàn thành",
+    title: "Rate",
+    dataIndex: "stt"
+  },
+  {
+    title: "Thiết bị",
+    dataIndex: "stt"
+  },
+  {
+    title: "Số tiền đã nạp",
     dataIndex: "stt"
   },
   {
@@ -53,44 +92,39 @@ const columns = [
     dataIndex: "stt"
   },
   {
-    title: "Danh sách lệnh",
-    dataIndex: "stt22"
-  },
-  {
-    title: "Tài khoản đăng ký nhận",
+    title: "Tài khoản có liên quan",
     dataIndex: "stt"
   },
   {
-    title: "Số tiền đặt rút",
+    title: "Thông báo từ Redmek",
     dataIndex: "stt"
   },
   {
-    title: "Trạng thái",
+    title: "Nạp tiền",
     dataIndex: "stt"
   },
   {
-    title: "Duyệt",
+    title: "Tình trạng",
     dataIndex: "stt"
   },
   {
-    title: "Nhập lý do từ chối",
+    title: "Khóa TK/ Mở khóa",
     dataIndex: "stt"
   },
   {
-    title: "Từ chối",
+    title: "Xóa TK",
     dataIndex: "stt"
-  }
+  },
 ];
 
 const data = [
   {
     key: 1,
-    stt: 1,
-    stt22: <Link to={`/rut-tien/danh-sach-lenh`}>Danh sách lệnh</Link>,
+    stt: 1
   }
 ];
 
-class WithDawalMajor extends React.Component {
+class ListQuestionAccount extends React.Component {
 
   constructor(props) {
     super(props);
@@ -110,7 +144,7 @@ class WithDawalMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Rút tiền">
+        <Card type="inner" title="Danh sách Câu hỏi">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
@@ -118,4 +152,4 @@ class WithDawalMajor extends React.Component {
   }
 }
 
-export default WithDawalMajor;
+export default ListQuestionAccount;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Card } from 'antd';
+import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -81,7 +82,7 @@ const columns = [
   },
   {
     title: 'Hệ số chia thưởng',
-    dataIndex: 'stt',
+    dataIndex: 'stt20',
   },
   {
     title: 'Mô tả',
@@ -89,7 +90,7 @@ const columns = [
   },
   {
     title: 'Xem chi tiết',
-    dataIndex: 'stt',
+    dataIndex: 'stt22',
   },
   {
     title: "Duyệt",
@@ -120,7 +121,9 @@ const columns = [
 const data = [
   {
     key: 1,
-    stt: 1
+    stt: 1,
+    stt22: <Link to={`/cau-hoi/chi-tiet-cau-hoi`}>Xem chi tiết</Link>,
+    stt20: <Link to={`/cau-hoi/he-so-chia-thuong`}>75,6%</Link>,
   }
 ];
 

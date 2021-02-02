@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Card } from 'antd';
+import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -9,7 +10,7 @@ const columns = [
   },
   {
     title: "ID",
-    dataIndex: "stt"
+    dataIndex: "stt1"
   },
   {
     title: "Tên",
@@ -93,7 +94,7 @@ const columns = [
   },
   {
     title: "Tài khoản có liên quan",
-    dataIndex: "stt"
+    dataIndex: "stt2"
   },
   {
     title: "Thông báo từ Redmek",
@@ -120,7 +121,9 @@ const columns = [
 const data = [
   {
     key: 1,
-    stt: 1
+    stt: 1,
+    stt1: <Link to={`/tai-khoan/tai-khoan-lien-quan`}>Xem danh sách</Link>,
+    stt2: <Link to={`/tai-khoan/danh-sach-cau-hoi`}>Xem danh sách</Link>,
   }
 ];
 

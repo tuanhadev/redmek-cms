@@ -1,35 +1,30 @@
 import React from "react";
 import { Table, Card } from 'antd';
-import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
+  {
+    title: "Ngày",
+    dataIndex: "stt"
+  },
   {
     title: "STT",
     dataIndex: "stt"
   },
   {
-    title: "ID Yêu cầu rút",
+    title: "Tên",
     dataIndex: "stt"
   },
   {
-    title: "Tên tài khoản",
+    title: "Định danh",
     dataIndex: "stt"
   },
   {
-    title: "Địa chỉ định danh",
+    title: "Số tiền nạp",
     dataIndex: "stt"
   },
   {
-    title: "ID tài khoản B",
-    dataIndex: "stt"
-  },
-  {
-    title: "Số dư tài khoản",
-    dataIndex: "stt"
-  },
-  {
-    title: "Tạm giữ",
+    title: "Kênh nạp",
     dataIndex: "stt"
   },
   {
@@ -37,31 +32,7 @@ const columns = [
     dataIndex: "stt"
   },
   {
-    title: "Số ngày đăng ký",
-    dataIndex: "stt"
-  },
-  {
-    title: "Danh sách câu hỏi",
-    dataIndex: "stt"
-  },
-  {
-    title: "Số Câu hỏi Nhận/Hoàn thành",
-    dataIndex: "stt"
-  },
-  {
-    title: "Số tiền đã rút",
-    dataIndex: "stt"
-  },
-  {
-    title: "Danh sách lệnh",
-    dataIndex: "stt22"
-  },
-  {
-    title: "Tài khoản đăng ký nhận",
-    dataIndex: "stt"
-  },
-  {
-    title: "Số tiền đặt rút",
+    title: "Người thực hiện",
     dataIndex: "stt"
   },
   {
@@ -69,15 +40,15 @@ const columns = [
     dataIndex: "stt"
   },
   {
-    title: "Duyệt",
+    title: "Lần nạp thứ",
     dataIndex: "stt"
   },
   {
-    title: "Nhập lý do từ chối",
+    title: "Tổng tiền đã nạp",
     dataIndex: "stt"
   },
   {
-    title: "Từ chối",
+    title: "Danh sách các lần nạp trước",
     dataIndex: "stt"
   }
 ];
@@ -86,11 +57,10 @@ const data = [
   {
     key: 1,
     stt: 1,
-    stt22: <Link to={`/rut-tien/danh-sach-lenh`}>Danh sách lệnh</Link>,
   }
 ];
 
-class WithDawalMajor extends React.Component {
+class RechargeBefore extends React.Component {
 
   constructor(props) {
     super(props);
@@ -110,7 +80,7 @@ class WithDawalMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Rút tiền">
+        <Card type="inner" title="Danh sách Nạp tiền chi tiết">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
@@ -118,4 +88,4 @@ class WithDawalMajor extends React.Component {
   }
 }
 
-export default WithDawalMajor;
+export default RechargeBefore;

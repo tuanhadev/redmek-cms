@@ -2,7 +2,7 @@ import React from "react";
 import { Table, Card } from 'antd';
 import config from "../../../config";
 
-const columns = [
+const columns1 = [
   {
     title: "STT",
     dataIndex: "stt"
@@ -57,6 +57,45 @@ const columns = [
   },
 ];
 
+const columns2 = [
+  {
+    title: "Ngày",
+    dataIndex: "stt"
+  },
+  {
+    title: "STT",
+    dataIndex: "stt"
+  },
+  {
+    title: "Doanh thu (K)",
+    dataIndex: "stt"
+  },
+  {
+    title: "Lý do",
+    dataIndex: "stt"
+  },
+  {
+    title: "Thời gian",
+    dataIndex: "stt"
+  },
+  {
+    title: "Câu hỏi",
+    dataIndex: "stt"
+  },
+  {
+    title: "Người hỏi",
+    dataIndex: "stt"
+  },
+  {
+    title: "Người trả lời",
+    dataIndex: "stt"
+  },
+  {
+    title: "Thông lượng",
+    dataIndex: "stt"
+  }
+];
+
 const data = [
   {
     key: 1,
@@ -84,8 +123,11 @@ class RevenueInformation extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Doanh thu">
-          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
+        <Card type="inner" title="Doanh thu" className="mb-5">
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns1} dataSource={data} scroll={{ x: 900 }} loading={loading} />
+        </Card>
+        <Card type="inner" title="Danh sách chi tiết">
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns2} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
     );

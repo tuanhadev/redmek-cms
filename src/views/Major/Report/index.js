@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Card } from 'antd';
+import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -89,14 +90,15 @@ const columns = [
   },
   {
     title: 'Xem chi tiết',
-    dataIndex: 'stt',
+    dataIndex: 'stt22',
   }
 ];
 
 const data = [
   {
     key: 1,
-    stt: 1
+    stt: 1,
+    stt22: <Link to={`/bao-cao/chi-tiet-bao-cao`}>Xem chi tiết</Link>,
   }
 ];
 

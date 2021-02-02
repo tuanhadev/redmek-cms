@@ -1,6 +1,5 @@
 import React from "react";
 import { Table, Card } from 'antd';
-import { Link } from "react-router-dom";
 import config from "../../../config";
 
 const columns = [
@@ -54,7 +53,7 @@ const columns = [
   },
   {
     title: "Danh sách lệnh",
-    dataIndex: "stt22"
+    dataIndex: "stt"
   },
   {
     title: "Tài khoản đăng ký nhận",
@@ -85,12 +84,11 @@ const columns = [
 const data = [
   {
     key: 1,
-    stt: 1,
-    stt22: <Link to={`/rut-tien/danh-sach-lenh`}>Danh sách lệnh</Link>,
+    stt: 1
   }
 ];
 
-class WithDawalMajor extends React.Component {
+class OrderListWithDrawal extends React.Component {
 
   constructor(props) {
     super(props);
@@ -110,7 +108,7 @@ class WithDawalMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Rút tiền">
+        <Card type="inner" title="Danh sách lệnh">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
@@ -118,4 +116,4 @@ class WithDawalMajor extends React.Component {
   }
 }
 
-export default WithDawalMajor;
+export default OrderListWithDrawal;

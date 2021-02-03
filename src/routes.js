@@ -22,7 +22,10 @@ const CommunityStatistical = React.lazy(() => import('../src/views/Statistical/C
 const FinanceStatiscal = React.lazy(() => import('../src/views/Statistical/Finance'));
 const MetricQuestionStatiscal = React.lazy(() => import('../src/views/Statistical/MetricQuestion'));
 const LibraryOther = React.lazy(() => import('../src/views/Other/Library'));
+const DetailLibraryOther = React.lazy(() => import('../src/views/Other/Library/detailLibrary.js'));
 const GameOther = React.lazy(() => import('../src/views/Other/Game'));
+const GameDetailOther = React.lazy(() => import('../src/views/Other/Game/detailGame'));
+const LogGameDetailOther = React.lazy(() => import('../src/views/Other/Game/logDetailGame'));
 
 let routes = [
   // { path: "/", exact: true, name: "Trang chủ", component: Dashboard },
@@ -47,7 +50,10 @@ let routes = [
   { path: "/tai-chinh", exact: true, name: "Tài chính", component: FinanceStatiscal },
   { path: "/so-lieu-cau-hoi", exact: true, name: "Số liệu câu hỏi", component: MetricQuestionStatiscal },
   { path: "/thu-vien", exact: true, name: "Thư viện Redmek", component: LibraryOther },
+  { path: "/thu-vien/chi-tiet", exact: true, name: "Xem chi tiết Tài liệu", component: DetailLibraryOther },
   { path: "/game", exact: true, name: "Danh sách game", component: GameOther },
+  { path: "/game/chi-tiet-game", exact: true, name: "Chi tiết Game", component: GameDetailOther },
+  { path: "/game/chi-tiet-game/lich-su-game", exact: true, name: "Danh sách Game đã chơi", component: LogGameDetailOther },
 ]
 
 export default routes;

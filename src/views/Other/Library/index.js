@@ -136,7 +136,6 @@ class LibraryOther extends React.Component {
               >
                 <Select
                   showSearch
-                  onChange={this.onChangeSelect}
                   placeholder="Chọn Lớp"
                   optionFilterProp="children"
                   filterOption={(input, option) =>
@@ -152,7 +151,6 @@ class LibraryOther extends React.Component {
               >
                 <Select
                   showSearch
-                  onChange={this.onChangeSelect}
                   placeholder="Chọn Môn"
                   optionFilterProp="children"
                   filterOption={(input, option) =>

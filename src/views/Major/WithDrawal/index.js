@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Card } from 'antd';
+import { Table, Card, Button } from 'antd';
 import { Link } from "react-router-dom";
 import config from "../../../config";
 
@@ -70,7 +70,7 @@ const columns = [
   },
   {
     title: "Duyệt",
-    dataIndex: "stt"
+    dataIndex: "stt1"
   },
   {
     title: "Nhập lý do từ chối",
@@ -78,7 +78,7 @@ const columns = [
   },
   {
     title: "Từ chối",
-    dataIndex: "stt"
+    dataIndex: "stt2"
   }
 ];
 
@@ -86,6 +86,8 @@ const data = [
   {
     key: 1,
     stt: 1,
+    stt1: <Button type="primary">Duyệt</Button>,
+    stt2: <Button danger type="text">Từ chối</Button>,
     stt22: <Link to={`/rut-tien/danh-sach-lenh`}>Danh sách lệnh</Link>,
   }
 ];
@@ -110,7 +112,10 @@ class WithDawalMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Rút tiền">
+        <Card className="mb-5" type="inner" title="Danh sách Chờ xử lý">
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
+        </Card>
+        <Card type="inner" title="Danh sách Yêu cầu rút tiền đã xử lý">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>

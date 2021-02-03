@@ -1,7 +1,19 @@
 import React from "react";
-import { Table, Card } from 'antd';
+import { Table, Card, Form, Button, Input, Typography, Select } from 'antd';
 import { Link } from "react-router-dom";
 import config from "../../../config";
+
+const { Text } = Typography;
+const { Option } = Select;
+
+const layout = {
+  labelCol: {
+    span: 4,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
 
 const columns = [
   {
@@ -102,19 +114,19 @@ const columns = [
   },
   {
     title: "Nạp tiền",
-    dataIndex: "stt"
+    dataIndex: "stt3"
   },
   {
     title: "Tình trạng",
-    dataIndex: "stt"
+    dataIndex: "stt4"
   },
   {
     title: "Khóa TK/ Mở khóa",
-    dataIndex: "stt"
+    dataIndex: "stt5"
   },
   {
     title: "Xóa TK",
-    dataIndex: "stt"
+    dataIndex: "stt6"
   },
 ];
 
@@ -122,8 +134,12 @@ const data = [
   {
     key: 1,
     stt: 1,
-    stt1: <Link to={`/tai-khoan/tai-khoan-lien-quan`}>Xem danh sách</Link>,
-    stt2: <Link to={`/tai-khoan/danh-sach-cau-hoi`}>Xem danh sách</Link>,
+    stt2: <Link to={`/tai-khoan/tai-khoan-lien-quan`}>Xem danh sách</Link>,
+    stt1: <Link to={`/tai-khoan/danh-sach-cau-hoi`}>Xem danh sách</Link>,
+    stt3: <Button type="primary">Gửi</Button>,
+    stt4: <Button type="primary">Active</Button>,
+    stt5: <Button danger type="text">Khóa</Button>,
+    stt6: <Button danger type="text">Xóa</Button>
   }
 ];
 
@@ -147,7 +163,113 @@ class AccountMajor extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Tài khoản">
+        <Card type="inner" title=" Danh sách Tài khoản">
+          <Card className="mb-3" type="inner" title="Bộ lọc" actions={[
+            <Button type="primary" htmlType="submit">
+              Tìm kiếm
+          </Button>
+          ]}>
+            <Form {...layout} name="nest-messages">
+              <Form.Item
+                label={<span>Thiết bị (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  placeholder="Chọn Thiết bị"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">Android</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span> A/B (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  placeholder="Chọn A/B"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">A</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span> Loại định danh (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  placeholder="Loại định danh"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">Email ĐKý</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span> Hạng (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  onChange={this.onChangeSelect}
+                  placeholder="Chọn Hạng"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">Vàng</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span> Tổng nạp (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  onChange={this.onChangeSelect}
+                  placeholder="Chọn Tổng nạp"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">Tổng nạp</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span> Số dư (<Text type="danger">*</Text>)</span>}
+              >
+                <Select
+                  showSearch
+                  onChange={this.onChangeSelect}
+                  placeholder="Chọn Số dư"
+                  optionFilterProp="children"
+                  filterOption={(input, option) =>
+                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                  }
+                  style={{ minWidth: 200 }}
+                >
+                  <Option key={"SEDAN"} value="SEDAN">Số dư</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item
+                label={<span>Search (<Text type="danger">*</Text>)</span>}
+              >
+                <Input />
+              </Form.Item>
+            </Form>
+          </Card>
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>

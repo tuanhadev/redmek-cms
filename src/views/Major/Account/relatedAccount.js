@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Card } from 'antd';
+import { Table, Card, Button } from 'antd';
 import config from "../../../config";
 
 const columns = [
@@ -101,26 +101,30 @@ const columns = [
   },
   {
     title: "Nạp tiền",
-    dataIndex: "stt"
+    dataIndex: "stt3"
   },
   {
     title: "Tình trạng",
-    dataIndex: "stt"
+    dataIndex: "stt4"
   },
   {
     title: "Khóa TK/ Mở khóa",
-    dataIndex: "stt"
+    dataIndex: "stt5"
   },
   {
     title: "Xóa TK",
-    dataIndex: "stt"
+    dataIndex: "stt6"
   },
 ];
 
 const data = [
   {
     key: 1,
-    stt: 1
+    stt: 1,
+    stt3: <Button type="primary">Gửi</Button>,
+    stt4: <Button type="primary">Active</Button>,
+    stt5: <Button danger type="text">Khóa</Button>,
+    stt6: <Button danger type="text">Xóa</Button>
   }
 ];
 
@@ -144,7 +148,10 @@ class RelatedAccount extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Tài khoản có liên quan">
+        <Card className="mb-5" type="inner" title="Xem chi tiết Tài khoản">
+          <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
+        </Card>
+        <Card type="inner" title="Danh sách Tài khoản liên quan">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>

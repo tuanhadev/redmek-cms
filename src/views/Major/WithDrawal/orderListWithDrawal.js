@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Card } from 'antd';
+import { Table, Card, Button } from 'antd';
 import config from "../../../config";
 
 const columns = [
@@ -69,7 +69,7 @@ const columns = [
   },
   {
     title: "Duyệt",
-    dataIndex: "stt"
+    dataIndex: "stt1"
   },
   {
     title: "Nhập lý do từ chối",
@@ -77,13 +77,15 @@ const columns = [
   },
   {
     title: "Từ chối",
-    dataIndex: "stt"
+    dataIndex: "stt2"
   }
 ];
 
 const data = [
   {
     key: 1,
+    stt1: <Button type="primary">Duyệt</Button>,
+    stt2: <Button danger type="text">Từ chối</Button>,
     stt: 1
   }
 ];
@@ -108,7 +110,7 @@ class OrderListWithDrawal extends React.Component {
     const { loading } = this.state;
     return (
       <div>
-        <Card type="inner" title="Danh sách lệnh">
+        <Card type="inner" title="Danh sách Lệnh đã xử lý">
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>

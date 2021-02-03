@@ -1,7 +1,21 @@
 import React from "react";
-import { Table, Card } from 'antd';
+import { Table, Card, Row, Col, Select, Input, Button, Form, Typography } from 'antd';
 import { Link } from "react-router-dom";
 import config from "../../../config";
+
+const { Text } = Typography;
+
+const layout = {
+  labelCol: {
+    span: 4,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
+
+const { Option } = Select;
+const { Search } = Input;
 
 const columns = [
   {
@@ -118,7 +132,70 @@ class PromotionInput extends React.Component {
     const { loading } = this.state;
     return (
       <div>
+        <Card type="inner" className="mb-5" title="Upload Game mới" actions={[
+          <Button type="primary" htmlType="submit">
+            Tạo mới
+          </Button>
+        ]}>
+          <Form {...layout} name="nest-messages">
+            <Form.Item
+              label={<span>Tên mã (<Text type="danger">*</Text>)</span>}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label={<span>LOẠI (<Text type="danger">*</Text>)</span>}
+            >
+              <Select
+                showSearch
+                placeholder="Chọn LOẠI"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+                style={{ minWidth: 200 }}
+              >
+                <Option key={"SEDAN"} value="SEDAN">Tự động</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={<span>Tác dụng (<Text type="danger">*</Text>)</span>}
+            >
+              <Select
+                showSearch
+                placeholder="Chọn Tác dụng"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
+                style={{ minWidth: 200 }}
+              >
+                <Option key={"SEDAN"} value="SEDAN">Giảm %</Option>
+              </Select>
+            </Form.Item>
+            <Form.Item
+              label={<span>Giá trị (<Text type="danger">*</Text>)</span>}
+            >
+              <Input />
+            </Form.Item>
+          </Form>
+        </Card>
         <Card type="inner" title="Danh sách khuyến mãi">
+          <Row className="my-3 search">
+            <Col lg={10} md={12} sm={24}>
+              <Input.Group compact>
+                <Select style={{ width: '25%' }} defaultValue="name">
+                  <Option value="name">Tên</Option>
+                  <Option value="email">Ký hiệu</Option>
+                </Select>
+                <Search
+                  style={{ width: '75%' }}
+                  placeholder="Nhập từ khoá"
+                  enterButton="Tìm kiếm"
+                />
+              </Input.Group>
+            </Col>
+          </Row>
           <Table bordered pagination={{ defaultPageSize: config.limit, showSizeChanger: true, pageSizeOptions: ['10', '20', '50'] }} columns={columns} dataSource={data} scroll={{ x: 900 }} loading={loading} />
         </Card>
       </div>
